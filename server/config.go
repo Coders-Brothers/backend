@@ -7,6 +7,8 @@ import (
 	"strconv"
 	"strings"
 	"sync"
+
+	"github.com/joho/godotenv"
 )
 
 type Config struct {
@@ -57,6 +59,29 @@ func GetConfig() *Config {
 }
 
 func (c *Config) ReadConfig() {
+	err := godotenv.Load(".env")
+
+	if err != nil {
+		log.Println("Error loading .env file")
+		return
+	}
+	POSTGRES_URL := os.Getenv("POSTGRES_URL")
+	JWT_SIGNING_KEY := os.Getenv("JWT_SIGNING_KEY")
+	SMTP_HOST := os.Getenv("SMTP_HOST")
+	SMTP_SENDER_ADDRESS := os.Getenv("SMTP_SENDER_ADDRESS")
+	// SMTP_PORT := os.Getenv("SMTP_PORT")
+	SMTP_AUTH_USER := os.Getenv("SMTP_AUTH_USER")
+	INIT_ORG_NAME := os.Getenv("INIT_ORG_NAME")
+	INIT_ORG_DOMAIN := os.Getenv("INIT_ORG_DOMAIN")
+	INIT_ORG_COUNTRY := os.Getenv("INIT_ORG_COUNTRY")
+	INIT_ORG_LANGUAGE := os.Getenv("INIT_ORG_LANGUAGE")
+	ORG_SIGNUP_DOMAIN := os.Getenv("ORG_SIGNUP_DOMAIN")
+	ORG_SIGNUP_ADMIN := os.Getenv("ORG_SIGNUP_ADMIN")
+	INIT_ORG_USER := os.Getenv("INIT_ORG_USER")
+	INIT_ORG_PASS := os.Getenv("INIT_ORG_PASS")
+	// ORG_SIGNUP_MAX_USERS := os.Getenv("ORG_SIGNUP_MAX_USERS")
+	log.Println(POSTGRES_URL)
+
 	log.Println("Reading config...")
 	c.Development = (c.getEnv("DEV", "0") == "1")
 	c.PublicListenAddr = c.getEnv("PUBLIC_LISTEN_ADDR", "0.0.0.0:8080")
@@ -70,28 +95,28 @@ func (c *Config) ReadConfig() {
 	c.DisableUiProxy = (c.getEnv("DISABLE_UI_PROXY", "0") == "1")
 	c.AdminUiBackend = c.getEnv("ADMIN_UI_BACKEND", "localhost:3000")
 	c.BookingUiBackend = c.getEnv("BOOKING_UI_BACKEND", "localhost:3001")
-	c.PostgresURL = c.getEnv("POSTGRES_URL", "postgres://postgres:root@localhost/seatsurfing?sslmode=disable")
-	c.JwtSigningKey = c.getEnv("JWT_SIGNING_KEY", "cX32hEwZDCLZ6bCR")
-	c.SMTPHost = c.getEnv("SMTP_HOST", "127.0.0.1")
-	c.SMTPPort = c.getEnvInt("SMTP_PORT", 25)
+	c.PostgresURL = c.getEnv("POSTGRES_URL", POSTGRES_URL)
+	c.JwtSigningKey = c.getEnv("JWT_SIGNING_KEY", JWT_SIGNING_KEY)
+	c.SMTPHost = c.getEnv("SMTP_HOST", SMTP_HOST)
+	c.SMTPPort = c.getEnvInt("SMTP_PORT", 12)
 	c.SMTPStartTLS = (c.getEnv("SMTP_START_TLS", "0") == "1")
 	c.SMTPInsecureSkipVerify = (c.getEnv("SMTP_INSECURE_SKIP_VERIFY", "0") == "1")
 	c.SMTPAuth = (c.getEnv("SMTP_AUTH", "0") == "1")
-	c.SMTPAuthUser = c.getEnv("SMTP_AUTH_USER", "")
+	c.SMTPAuthUser = c.getEnv("SMTP_AUTH_USER", SMTP_AUTH_USER)
 	c.SMTPAuthPass = c.getEnv("SMTP_AUTH_PASS", "")
-	c.SMTPSenderAddress = c.getEnv("SMTP_SENDER_ADDRESS", "no-reply@seatsurfing.local")
+	c.SMTPSenderAddress = c.getEnv("SMTP_SENDER_ADDRESS", SMTP_SENDER_ADDRESS)
 	c.MockSendmail = (c.getEnv("MOCK_SENDMAIL", "0") == "1")
 	c.PrintConfig = (c.getEnv("PRINT_CONFIG", "0") == "1")
-	c.InitOrgName = c.getEnv("INIT_ORG_NAME", "Sample Company")
-	c.InitOrgDomain = c.getEnv("INIT_ORG_DOMAIN", "seatsurfing.local")
-	c.InitOrgUser = c.getEnv("INIT_ORG_USER", "admin")
-	c.InitOrgPass = c.getEnv("INIT_ORG_PASS", "12345678")
-	c.InitOrgCountry = c.getEnv("INIT_ORG_COUNTRY", "DE")
-	c.InitOrgLanguage = c.getEnv("INIT_ORG_LANGUAGE", "de")
-	c.OrgSignupEnabled = (c.getEnv("ORG_SIGNUP_ENABLED", "0") == "1")
-	c.OrgSignupDomain = c.getEnv("ORG_SIGNUP_DOMAIN", ".on.seatsurfing.local")
-	c.OrgSignupAdmin = c.getEnv("ORG_SIGNUP_ADMIN", "admin")
-	c.OrgSignupMaxUsers = c.getEnvInt("ORG_SIGNUP_MAX_USERS", 10)
+	c.InitOrgName = c.getEnv("INIT_ORG_NAME", INIT_ORG_NAME)
+	c.InitOrgDomain = c.getEnv("INIT_ORG_DOMAIN", INIT_ORG_DOMAIN)
+	c.InitOrgUser = c.getEnv("INIT_ORG_USER", INIT_ORG_USER)
+	c.InitOrgPass = c.getEnv("INIT_ORG_PASS", INIT_ORG_PASS)
+	c.InitOrgCountry = c.getEnv("INIT_ORG_COUNTRY", INIT_ORG_COUNTRY)
+	c.InitOrgLanguage = c.getEnv("INIT_ORG_LANGUAGE", INIT_ORG_LANGUAGE)
+	c.OrgSignupEnabled = (c.getEnv("ORG_SIGNUP_ENABLED", "1") == "1")
+	c.OrgSignupDomain = c.getEnv("ORG_SIGNUP_DOMAIN", ORG_SIGNUP_DOMAIN)
+	c.OrgSignupAdmin = c.getEnv("ORG_SIGNUP_ADMIN", ORG_SIGNUP_ADMIN)
+	c.OrgSignupMaxUsers = c.getEnvInt("ORG_SIGNUP_MAX_USERS", 20)
 	c.OrgSignupDelete = (c.getEnv("ORG_SIGNUP_DELETE", "0") == "1")
 	c.LoginProtectionMaxFails = c.getEnvInt("LOGIN_PROTECTION_MAX_FAILS", 10)
 	c.LoginProtectionSlidingWindowSeconds = c.getEnvInt("LOGIN_PROTECTION_SLIDING_WINDOW_SECONDS", 600)
