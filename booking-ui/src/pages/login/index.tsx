@@ -193,7 +193,7 @@ class Login extends React.Component<Props, State> {
       return (
         <div className="container-signin">
           <Form className="form-signin" onSubmit={this.onPasswordSubmit}>
-            <img src="/ui/seatsurfing.svg" alt="Seatsurfing" className="logo" />
+            <img src="/ui/easypointment.png" alt="EasyPointment" className="logo" />
             <p>{this.props.t("signinAsAt", { user: this.state.email, org: this.org?.name })}</p>
             <InputGroup>
               <Form.Control type="password" readOnly={this.state.inPasswordSubmit} placeholder={this.props.t("password")} value={this.state.password} onChange={(e: any) => this.setState({ password: e.target.value, invalid: false })} required={true} isInvalid={this.state.invalid} minLength={8} autoFocus={true} />
@@ -218,7 +218,7 @@ class Login extends React.Component<Props, State> {
       return (
         <div className="container-signin">
           <Form className="form-signin">
-            <img src="/ui/seatsurfing.svg" alt="Seatsurfing" className="logo" />
+            <img src="/ui/easypointment.png" alt="EasyPointment" className="logo" />
             {providerSelection}
             {buttons}
             <p className="margin-top-50"><Button variant="link" onClick={() => this.setState({ providers: null })}>{this.props.t("back")}</Button></p>
@@ -230,7 +230,7 @@ class Login extends React.Component<Props, State> {
     return (
       <div className="container-signin">
         <Form className="form-signin" onSubmit={this.onSubmit}>
-          <img src="/ui/seatsurfing.svg" alt="Seatsurfing" className="logo" />
+          <img src="/ui/easypointment.png" alt="EasyPointment" className="logo" />
           <h3>{this.props.t("findYourPlace")}</h3>
           <InputGroup>
             <Form.Control type="email" readOnly={this.state.inPreflight} placeholder={this.props.t("emailPlaceholder")} value={this.state.email} onChange={(e: any) => this.setState({ email: e.target.value, invalid: false })} required={true} isInvalid={this.state.invalid} autoFocus={true} />
@@ -240,7 +240,7 @@ class Login extends React.Component<Props, State> {
           <Form.Check type="checkbox" id="check-rememberme" label={this.props.t("rememberMe")} checked={this.state.rememberMe} onChange={(e: any) => this.setState({ rememberMe: e.target.checked })} />
           <p className="margin-top-50"><Link href="/resetpw">{this.props.t("forgotPassword")}</Link></p>
         </Form>
-        <p className="copyright-footer">&copy; Seatsurfing &#183; Version {process.env.NEXT_PUBLIC_PRODUCT_VERSION}</p>
+        <p className="copyright-footer">&copy; EasyPointment &#183; Version {process.env.NEXT_PUBLIC_PRODUCT_VERSION}</p>
       </div>
     );
   }

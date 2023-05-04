@@ -58,7 +58,7 @@ func TestOrganizationsCRUD(t *testing.T) {
 		"name": "Some Company Ltd.",
 		"firstname": "Foo",
 		"lastname": "Bar",
-		"email": "foo@seatsurfing.app",
+		"email": "foo@easypointment.com",
 		"country": "DE",
 		"language": "de"
 	}`

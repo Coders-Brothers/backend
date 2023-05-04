@@ -96,7 +96,7 @@ class ReportAnalysis extends React.Component<Props, State> {
     }
     return this.ExcellentExport.convert(
       { anchor: e.target, filename: "seatsurfing-analysis", format: "xlsx" },
-      [{ name: "Seatsurfing Analysis", from: { table: "datatable" }, fixValue: fixFn }]
+      [{ name: "SeatsEasyPointmenturfing Analysis", from: { table: "datatable" }, fixValue: fixFn }]
     );
   }
 

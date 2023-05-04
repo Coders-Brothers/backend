@@ -62,7 +62,7 @@ class Locations extends React.Component<Props, State> {
   exportTable = (e: any) => {
     return this.ExcellentExport.convert(
       { anchor: e.target, filename: "seatsurfing-areas", format: "xlsx" },
-      [{ name: "Seatsurfing Areas", from: { table: "datatable" } }]
+      [{ name: "EasyPointment Areas", from: { table: "datatable" } }]
     );
   }
 

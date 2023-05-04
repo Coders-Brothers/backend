@@ -48,7 +48,7 @@ class InitPasswordReset extends React.Component<Props, State> {
         return (
           <div className="container-center">
             <div className="container-center-inner">
-              <img src="/ui/seatsurfing.svg" alt="Seatsurfing" className="logo" />
+              <img src="/ui/easypointment.png" alt="EasyPointment" className="logo" />
               <p>{this.props.t("initPasswordResetEmail")}</p>
             </div>
           </div>
@@ -57,7 +57,7 @@ class InitPasswordReset extends React.Component<Props, State> {
         return (
           <div className="container-center">
             <div className="container-center-inner">
-              <img src="/ui/seatsurfing.svg" alt="Seatsurfing" className="logo" />
+              <img src="/ui/easypointment.png" alt="EasyPointment" className="logo" />
               <p>{this.props.t("initPasswordResetFailed")}</p>
             </div>
           </div>
@@ -68,7 +68,7 @@ class InitPasswordReset extends React.Component<Props, State> {
     return (
       <div className="container-center">
         <Form className="container-center-inner" onSubmit={this.onPasswordSubmit}>
-          <img src="/ui/seatsurfing.svg" alt="Seatsurfing" className="logo" />
+          <img src="/ui/easypointment.png" alt="EasyPointment" className="logo" />
           <Form.Group>
             <Form.Control type="email" placeholder={this.props.t("emailPlaceholder")} value={this.state.email} onChange={(e: any) => this.setState({ email: e.target.value })} required={true} autoFocus={true} />
           </Form.Group>

@@ -42,9 +42,9 @@
     "noRecords": "Aucun enregistrement trouvé.",
     "name": "Nom",
     "type": "Type",
-    "subscriptionActive": "Vous disposez d’un abonnement Seatsurfing actif avec jusqu’à {{num}} utilisateurs.",
+    "subscriptionActive": "Vous disposez d’un abonnement EasyPointment actif avec jusqu’à {{num}} utilisateurs.",
     "subscriptionManage": "Gérer l’abonnement",
-    "subscriptionInactive": "Vous utilisez la version gratuite de Seatsurfing avec jusqu’à {{num}} utilisateurs.",
+    "subscriptionInactive": "Vous utilisez la version gratuite de EasyPointment avec jusqu’à {{num}} utilisateurs.",
     "deleteOrg": "Supprimer l’organisation",
     "entryUpdated": "Entrée mise à jour.",
     "errorSave": "Erreur lors de l’enregistrement, veuillez vérifier votre entrée.",
@@ -105,7 +105,7 @@
     "description": "Description",
     "orgId": "ID d’instance",
     "featureCurrentlyUnavailable": "Cette fonctionnalité n’est actuellement pas disponible.",
-    "orgSignupSuccess": "Vous êtes prêt à partir! Votre organisation Seatsurfing a été mise en place.",
+    "orgSignupSuccess": "Vous êtes prêt à partir! Votre organisation EasyPointment a été mise en place.",
     "orgSignupGoToLogin": "Continuer vers le panneau d’administration",
     "orgSignupFailed": "Cela n’a pas fonctionné comme prévu! Peut-être que votre inscription a expirée.",
     "firstname": "Prénom",
@@ -128,5 +128,5 @@
     "all": "Tout",
     "confirmCancelBooking": "Annuler la réservation?",
     "bookingui": "Site de réservation",
-    "updateAvailable": "Veuillez mettre à jour Seatsurfing vers la dernière version {{version}}."
+    "updateAvailable": "Veuillez mettre à jour EasyPointment vers la dernière version {{version}}."
 }
