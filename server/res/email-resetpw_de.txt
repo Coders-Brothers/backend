@@ -1,7 +1,7 @@
-From: Seatsurfing <{{senderAddress}}>
+From: EasyPointment <{{senderAddress}}>
 To: {{recipientEmail}}
 Content-Type: text/plain; charset=UTF-8
-Subject: Zurücksetzen Ihres Seatsurfing-Kennworts
+Subject: Zurücksetzen Ihres EasyPointment-Kennworts
 
 Hallo {{recipientName}},
 
@@ -16,7 +16,7 @@ können Sie diese Mail gefahrlos ignorieren. Wir werden Ihr Kennwort
 nicht ändern, wenn Sie den oben stehenden Link nicht anklicken.
 
 Viele Grüße
-Ihr Team von seatsurfing.app
+Ihr Team von EasyPointment.com
 
 -- 
-www.seatsurfing.app
+www.EasyPointment.com

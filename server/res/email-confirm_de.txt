@@ -1,7 +1,7 @@
-From: Seatsurfing <{{senderAddress}}>
+From: EasyPointment <{{senderAddress}}>
 To: {{recipientEmail}}
 Content-Type: text/plain; charset=UTF-8
-Subject: Ihr Seatsurfing-Account steht bereit
+Subject: Ihr EasyPointment-Account steht bereit
 
 Hallo {{recipientName}},
 
@@ -18,14 +18,14 @@ Benutzernamen:
 
 {{username}}
 
-Zur Platzbuchung nutzen Sie und Ihre Mitarbeiter bitte die Seatsurfing-
+Zur Platzbuchung nutzen Sie und Ihre Mitarbeiter bitte die EasyPointment-
 Apps für Android und iOS oder die Web-Oberfläche.
 
 Web-Oberfläche: {{frontendUrl}}ui/
 Adresse für Anmeldung in App: {{publicUrl}}
 
 Viele Grüße
-Ihr Team von seatsurfing.app
+Ihr Team von EasyPointment.com
 
 -- 
-www.seatsurfing.app
+www.easypointment.com

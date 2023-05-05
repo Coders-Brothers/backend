@@ -1,7 +1,7 @@
-From: Seatsurfing <{{senderAddress}}>
+From: EasyPointment <{{senderAddress}}>
 To: {{recipientEmail}}
 Content-Type: text/plain; charset=UTF-8
-Subject: Reset your Seatsurfing password
+Subject: Reset your EasyPointment password
 
 Hello {{recipientName}},
 
@@ -11,12 +11,12 @@ If this request was yours, you can change your password here:
 
 {{frontendUrl}}ui/resetpw/{{confirmID}}
 
-If you did not initiate a password reset for your Seatsurfing account,
+If you did not initiate a password reset for your EasyPointment account,
 you can safely ignore this email. We won't change your password if you
 don't click the link above.
 
 Kind regards,
-Team Seatsurfing
+Team EasyPointment
 
 -- 
-www.seatsurfing.app
+www.easypointment.com
