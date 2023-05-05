@@ -2,10 +2,10 @@ FROM node:18-alpine AS commons-builder
 WORKDIR /app
 RUN apk add git
 RUN git init && \
-    git remote add -f origin https://github.com/seatsurfing/backend.git && \
+    git remote add -f origin https://github.com/Coders-Brothers/backend.git && \
     git config core.sparseCheckout true && \
     echo 'commons' >> .git/info/sparse-checkout && \
-    git pull origin master
+    git pull origin production
 WORKDIR /app/commons/ts
 RUN npm install
 RUN npm run build
